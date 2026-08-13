@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -31,6 +32,13 @@ void hi(string ) { // Unnamed Paramters Can Not Be Used but Are There if You Wan
     cout << "Hello World" << '\n';
 }
 
+//Local Scope
+void too(int num1 /* num1 is a local variable */) {
+    int num2 = 10;                         //b is also a local variable
+    cout << "num1 = " << num1 << '\n';
+    cout << "num2 = " << num2 << '\n';
+}
+
 int main() {
     hi("Hello");                        //Invokes The Function hi()
     cout << "Start Of main()" << '\n';
@@ -39,5 +47,6 @@ int main() {
     //Prints The Value Returned By The Function baz()
     cout << "Value Returned By baz() Is: " << baz() << '\n';
     bar(5, 10);                         //Invokes The Function bar()
+    too(5);
     return 0;
 }
