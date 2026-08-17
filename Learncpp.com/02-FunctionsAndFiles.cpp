@@ -3,15 +3,16 @@
 
 using namespace std;
 
-void print(string s); // Forward Declaring A function
+int print(string s); // Forward Declaring A function
 
 //Value Returning Function
 int baz() {
-    return 5;
+    return 10;
 }
 
 //Non-Value Returning Function
 void foo() {
+    baz();
     cout << "In foo()" << '\n'; 
 }
 
@@ -53,6 +54,7 @@ int main() {
     return 0;
 }
 
-void print(string s) { // Forward Declared Function
+int print(string s) { // Forward Declared Function
+    baz();                              //Invokes The Function baz()
     cout << s << '\n';
 }
