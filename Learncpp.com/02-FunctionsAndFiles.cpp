@@ -3,6 +3,8 @@
 
 using namespace std;
 
+void print(string s); // Forward Declaring A function
+
 //Value Returning Function
 int baz() {
     return 5;
@@ -44,9 +46,13 @@ int main() {
     cout << "Start Of main()" << '\n';
     moo();                              //Invokes The Function moo()
     cout << "End Of main()" << '\n';
-    //Prints The Value Returned By The Function baz()
-    cout << "Value Returned By baz() Is: " << baz() << '\n';
+    print("Hello World!");              //Invokes The Forward Declared Function print()
+    cout << "Value Returned By baz() Is: " << baz() << '\n'; //Prints The Value Returned By The Function baz()
     bar(5, 10);                         //Invokes The Function bar()
     too(5);
     return 0;
+}
+
+void print(string s) { // Forward Declared Function
+    cout << s << '\n';
 }
