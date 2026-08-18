@@ -7,11 +7,12 @@ void print(string s); // Forward Declaring A function
 
 //Value Returning Function
 int baz() {
-    return 5;
+    return 10;
 }
 
 //Non-Value Returning Function
 void foo() {
+    baz();
     cout << "In foo()" << '\n'; 
 }
 
@@ -42,6 +43,9 @@ void too(int num1 /* num1 is a local variable */) {
 }
 
 int main() {
+    int age {};
+    age = 10;                           //Reassigning Value to Funcition
+    cout << age << endl;                
     hi("Hello");                        //Invokes The Function hi()
     cout << "Start Of main()" << '\n';
     moo();                              //Invokes The Function moo()
@@ -54,5 +58,6 @@ int main() {
 }
 
 void print(string s) { // Forward Declared Function
+    baz();                              //Invokes The Function baz()
     cout << s << '\n';
 }
