@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int print(string s); // Forward Declaring A function
+void print(string s); // Forward Declaring A function
 
 //Value Returning Function
 int baz() {
@@ -43,6 +43,9 @@ void too(int num1 /* num1 is a local variable */) {
 }
 
 int main() {
+    int age {};
+    age = 10;                           //Reassigning Value to Funcition
+    cout << age << endl;                
     hi("Hello");                        //Invokes The Function hi()
     cout << "Start Of main()" << '\n';
     moo();                              //Invokes The Function moo()
@@ -54,7 +57,7 @@ int main() {
     return 0;
 }
 
-int print(string s) { // Forward Declared Function
+void print(string s) { // Forward Declared Function
     baz();                              //Invokes The Function baz()
     cout << s << '\n';
 }
