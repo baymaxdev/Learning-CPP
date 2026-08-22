@@ -1,9 +1,12 @@
 #include <iostream>
 #include <string>
+#include "add.cpp"
 
 using namespace std;
 
 void print(string s); // Forward Declaring A function
+
+int add(int a, int b);
 
 //Value Returning Function
 int baz() {
@@ -35,6 +38,14 @@ void hi(string ) { // Unnamed Paramters Can Not Be Used but Are There if You Wan
     cout << "Hello World" << '\n';
 }
 
+int Sum(int a , int b)  {           //Function With Same Idfentifier But
+    return a + b;
+}
+
+int Sum(int a , int b, int c)  {    // Different Number Of Parameters Are Considered Different Function
+    return a + b + c;
+}
+
 //Local Scope
 void too(int num1 /* num1 is a local variable */) {
     int num2 = 10;                         //b is also a local variable
@@ -43,6 +54,8 @@ void too(int num1 /* num1 is a local variable */) {
 }
 
 int main() {
+    cout << Sum(10, 20) << '\n';
+    cout << Sum(10, 20, 30) << '\n';
     int age {};
     age = 10;                           //Reassigning Value to Funcition
     cout << age << endl;                
@@ -54,6 +67,8 @@ int main() {
     cout << "Value Returned By baz() Is: " << baz() << '\n'; //Prints The Value Returned By The Function baz()
     bar(5, 10);                         //Invokes The Function bar()
     too(5);
+    // We Either Compile Both Files Together Or We Can Also Use Preprocessor Directives
+    cout << add(10, 20) << '\n';        //Invokes A Function From Another File
     return 0;
 }
 
