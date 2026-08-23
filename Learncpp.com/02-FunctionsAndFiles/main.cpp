@@ -54,8 +54,9 @@ void too(int num1 /* num1 is a local variable */) {
 }
 
 int main() {
-    cout << Sum(10, 20) << '\n';
-    cout << Sum(10, 20, 30) << '\n';
+    cout << Sum(10, 20) << '\n'; // Both Are Differnt Functions
+    cout << Sum(10, 20, 30) << '\n'; 
+    
     int age {};
     age = 10;                           //Reassigning Value to Funcition
     cout << age << endl;                
